@@ -120,11 +120,6 @@ ________________________________________________________________________________
 
 
           NUMBER GUESSING GAME
-
-
-Question No: 3
-
-DESCRIPTION:
 This is a simple console-based Number Guessing Game written in C++.
 The program randomly selects a number between 1 and 100.
 The player has to guess the number. 
