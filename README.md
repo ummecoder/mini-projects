@@ -161,4 +161,118 @@ FEATURES:
 - Hint after every guess
 - Counts and displays total attempts
 - Simple and easy to use.
-___________________________________________________________________________________________________________________________________-
+___________________________________________________________________________________________________________________________________
+                    ATM MANAGEMENT SYSTEM 
+                    C++ Console Application
+
+
+1. PROJECT OVERVIEW
+
+This is a Console based ATM Management System developed in C++.
+It simulates real ATM operations including secure login, transactions,
+receipt generation, and multi-account support using Object Oriented Programming.
+
+2. KEY FEATURES
+
+[✓] Secure PIN Authentication
+[✓] Check Account Balance
+[✓] Deposit Money with Auto Receipt Generation
+[✓] Withdraw Money with Balance Validation
+[✓] Fund Transfer between Multiple Accounts
+[✓] Transaction History Log
+[✓] Auto-generated Transaction Receipt with Date & Time
+[✓] Support for Multiple User Accounts
+
+3. TECHNICAL STACK
+
+Language        : C++
+Concepts Used   : OOP, Classes, Vectors, Functions, Loops, Switch
+Data Structure  : vector<Account> for managing multiple accounts
+Libraries       : iostream, string, vector, ctime
+
+4. SYSTEM ARCHITECTURE
+
+Class: Account
+    - Attributes: accountHolder, accountNumber, balance, pin, transactionHistory
+    - Methods: 
+            1. checkPin()              -> Authentication
+            2. checkBalance()          -> Display balance
+            3. deposit()               -> Add money + Receipt
+            4. withdraw()              -> Deduct money + Receipt  
+            5. transfer()              -> Transfer to other account + Receipt
+            6. showTransactionHistory()-> Display transaction log
+            7. printReceipt()          -> Generate formatted receipt
+
+5. HOW TO COMPILE & RUN
+
+Step 1: Open Terminal / Command Prompt
+Step 2: Compile the code
+        g++ atm.cpp -o atm
+
+Step 3: Run the executable
+        ./atm     [For Linux/Mac]
+        atm.exe   [For Windows]
+
+6. TEST CREDENTIALS
+
+Use these pre-defined accounts to test the system:
+
+| Account Holder | Account No | PIN  | Initial Balance |
+|----------------|------------|------|-----------------|
+| Ali Khan       | 1001       | 1234 | Rs. 50,000      |
+| Sara Ahmed     | 1002       | 5678 | Rs. 30,000      |
+| Ahmed Raza     | 1003       | 9999 | Rs. 75,000      |
+
+7. USER WORKFLOW
+
+1.  Start the program
+2.  Enter Account Number and 4-digit PIN
+3.  If credentials are valid, ATM Menu will appear
+4.  Select option from 1 to 6
+        1. Check Balance      -> View current balance
+        2. Deposit            -> Enter amount > Receipt generated
+        3. Withdraw           -> Enter amount > Balance checked > Receipt
+        4. Transfer           -> Enter Target AccNo + Amount > Receipt
+        5. Transaction History-> View all past transactions
+        6. Exit               -> Logout from system
+
+8. CODE LOGIC EXPLAINED
+
+Module 1: Authentication
+    - Linear search on vector to match AccNo + PIN
+    - If not found -> Access Denied
+
+Module 2: Transactions
+    - Deposit: balance = balance + amount
+    - Withdraw: balance = balance - amount with validation
+    - Transfer: Deduct from sender, Add to receiver
+
+Module 3: Receipt System
+    - Triggered automatically after Deposit/Withdraw/Transfer
+    - Uses ctime library for timestamp
+
+Module 4: History
+    - All transactions stored in vector<string>
+    - Displayed in chronological order
+
+9. OUTPUT SAMPLE
+
+========== TRANSACTION RECEIPT ==========
+Account Holder: Ali Khan
+Account No: 1001
+Transaction Type: DEPOSIT
+Amount: Rs. 5000
+Current Balance: Rs. 55000
+Date & Time: Wed Apr 16 10:30:00 2026
+Thank you for banking with us!
+
+
+10. FUTURE IMPROVEMENTS
+
+[ ] File handling to save data permanently
+[ ] Change PIN option
+[ ] Admin panel to add/delete accounts
+[ ] Mini statement print option
+
+                        END OF DOCUMENTATION
+-
